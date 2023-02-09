@@ -66,7 +66,7 @@ public class Transition {
     }
 
     private String toStringBows(String label, List<Bow> bows){
-        StringBuilder text = new StringBuilder("======== Transition " + label + ": " + this.getName() + " ==========").append("\n");
+        StringBuilder text = new StringBuilder("------ Transitions " + label + ": " + this.getName() + " ------").append("\n");
 
         for (Bow bow: bows) {
             text.append("place: ").append(bow.getPlaceName()).append("\n");

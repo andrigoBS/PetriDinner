@@ -27,9 +27,9 @@ public class LogNetwork {
         String text = "";
 
         for (Transition transition : transitions) {
-            text += "======= INTERATIONS = " + interactions + " ======\n\n";
+            text += "=========== INTERACTIONS = " + interactions + " ===========\n\n";
             text += transition.toString();
-            text += "==============================================\n\n";
+            text += "========================================\n\n";
         }
 
         logByInteraction.add(text);
