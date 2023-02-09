@@ -1,4 +1,6 @@
 # PetriDinner - Petri Network
+Implementação de um motor de simulação de rede de petri. \
+Implementation of a petri net simulation engine.
 
 ## Dependencies:
 - java 19
