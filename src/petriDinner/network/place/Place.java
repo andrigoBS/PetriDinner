@@ -6,7 +6,7 @@ public class Place {
     private final Semaphore place;
     private final String name;
 
-    public Place(int initialManyTokens, String name){
+    public Place(int initialManyTokens, String name) {
         this.place = new Semaphore(initialManyTokens);
         this.name = name;
     }
