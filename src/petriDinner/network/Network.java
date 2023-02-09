@@ -23,8 +23,9 @@ public class Network {
     }
 
     public void simulate(int maxInteractions) throws InterruptedException {
-        while (maxInteractions < interactions) {
+        while (interactions < maxInteractions) {
             List<Transition> activeTransitions = transitions.stream().filter(Transition::isActive).toList();
+
 
             if(activeTransitions.size() == 0) break;
 
@@ -41,7 +42,20 @@ public class Network {
     }
 
     private void logState() {
-        System.out.println(transitions);
+
+        String text = "";
+
+
+
+        for (Transition transition : transitions) {
+            text += "======= INTERATIONS = " + interactions + " ======\n\n";
+            text += transition.toString();
+            text += "==============================================\n\n";
+
+        }
+
+        System.out.println(text);
+
     }
 
     private class TransactionThread extends Thread{

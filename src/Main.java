@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Place place1 = new Place(1, "a");
         Place place2 = new Place(0, "b");
@@ -30,7 +30,7 @@ public class Main {
 
         Bow bow7 = new Bow(0, place2);
         Bow bow8 = new Bow(0, place5);
-        Transition transition4 = new Transition(bow5, bow6, "t6");
+        Transition transition4 = new Transition(bow7, bow8, "t6");
 
         Bow bow9 = new Bow(0, place5);
         Bow bow10 = new Bow(0, place3);
@@ -53,16 +53,19 @@ public class Main {
         Transition transition9 = new Transition(bow17, bow18, "t8");
 
 
+        Network network = new Network();
+        network.addTransition(transition1);
+        network.addTransition(transition2);
+        network.addTransition(transition3);
+        network.addTransition(transition4);
+        network.addTransition(transition5);
+        network.addTransition(transition6);
+        network.addTransition(transition7);
+        network.addTransition(transition8);
+        network.addTransition(transition9);
 
+        network.simulate(10);
 
-//        String filePath = getPathFile(args);
-//        int interactions = getInteractions(args);
-
-//        ArrayList<Transition> transitions = new ArrayList<>();
-//        transitions.add(new Transition());
-//
-//        Network network = new Network(transitions);
-//        new PetriDinner(network).simulate(interactions);
     }
 
     public static String getPathFile(String[] args) {

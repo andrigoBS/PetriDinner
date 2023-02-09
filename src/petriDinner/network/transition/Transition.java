@@ -55,13 +55,13 @@ public class Transition {
     }
 
     private String toStringBows(String label, List<Bow> bows){
-        StringBuilder text = new StringBuilder("======== Transition " + label + ": " + this.getName() + "==========");
+        StringBuilder text = new StringBuilder("======== Transition " + label + ": " + this.getName() + " ==========").append("\n");
 
         for (Bow bow: bows) {
-            text.append("place: ").append(bow.getPlaceName());
-            text.append("tokens: ").append(bow.getPlaceTokens());
-            text.append("weight: ").append(bow.getWeight());
-            text.append("bow").append(label).append(": (").append(bow.getPlaceName()).append(" -> ").append(this.getName()).append(") \n");
+            text.append("place: ").append(bow.getPlaceName()).append("\n");
+            text.append("tokens: ").append(bow.getPlaceTokens()).append("\n");
+            text.append("weight: ").append(bow.getWeight()).append("\n");
+            text.append("bow ").append(label).append(": (").append(bow.getPlaceName()).append(" -> ").append(this.getName()).append(") \n").append("\n");
         }
 
         return text.toString();

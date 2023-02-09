@@ -20,7 +20,7 @@ public class Bow {
     }
 
     public boolean canSubTokens() {
-        return place.getManyTokens() > weight;
+        return place.getManyTokens() >= weight;
     }
 
     public Place getPlace() {
