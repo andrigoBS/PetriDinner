@@ -20,6 +20,12 @@ public class Transition {
         this.bowsOut.add(bowOut);
     }
 
+    public Transition(String name){
+        this.bowsIn = new ArrayList<>();
+        this.bowsOut = new ArrayList<>();
+        this.name = name;
+    }
+
     public boolean execute() {
         if(!isActive()) return false;
         for (int i = 0; i < bowsIn.size(); i++) {

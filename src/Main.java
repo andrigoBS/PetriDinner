@@ -16,17 +16,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException, ParserConfigurationException,SAXException {
 
-        Examples examples = new Examples();
-        Network networkCandyMachine = examples.candyMachine();
-        networkCandyMachine.simulate(10);
+//        Examples examples = new Examples();
+//        Network networkCandyMachine = examples.candyMachine();
+//        networkCandyMachine.simulate(10);
 
-        LogNetwork.getInstance().toFiles("./assets/logs/");
+//        LogNetwork.getInstance().toFiles("./assets/logs/");
 
 //        Network networkExample1 = examples.example1();
 //        networkExample1.simulate(10);
 
-//        ParserPNML parserPNML = new ParserPNML();
-//        parserPNML.toNetwork("./assets/dinner.pnml");
+        ParserPNML parserPNML = new ParserPNML();
+        parserPNML.toNetwork("./assets/candyMachine.pnml");
 
     }
 
