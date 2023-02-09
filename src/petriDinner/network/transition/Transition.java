@@ -21,6 +21,10 @@ public class Transition {
 
     }
 
+    public boolean isActive() {
+        return false;
+    }
+
     public void addPlaceIn(Place placeIn){
         this.placesIn.add(placeIn);
     }
