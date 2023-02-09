@@ -4,6 +4,7 @@ import petriDinner.network.bow.Bow;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Transition {
     private final List<Bow> bowsIn;
@@ -61,7 +62,12 @@ public class Transition {
             text.append("place: ").append(bow.getPlaceName()).append("\n");
             text.append("tokens: ").append(bow.getPlaceTokens()).append("\n");
             text.append("weight: ").append(bow.getWeight()).append("\n");
-            text.append("bow ").append(label).append(": (").append(bow.getPlaceName()).append(" -> ").append(this.getName()).append(") \n").append("\n");
+
+            if(Objects.equals(label, "in")){
+                text.append("bow ").append(label).append(": (").append(bow.getPlaceName()).append(" -> ").append(this.getName()).append(") \n").append("\n");
+            }else{
+                text.append("bow ").append(label).append(": (").append(this.getName()).append(" -> ").append(bow.getPlaceName()).append(") \n").append("\n");
+            }
         }
 
         return text.toString();

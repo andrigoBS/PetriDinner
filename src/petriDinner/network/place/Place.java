@@ -13,6 +13,7 @@ public class Place {
     }
 
     public void subTokens(int manyTokens) throws InterruptedException {
+        if(manyTokens > getManyTokens()) return;
         place.acquire(manyTokens);
     }
 
