@@ -1,25 +1,27 @@
 package petriDinner.network.place;
 
 
-public class Place {
-    private int tokens;
-    private String name;
+import java.util.concurrent.Semaphore;
 
-    public Place(int tokens, String name){
-        this.tokens = tokens;
+public class Place {
+    private final Semaphore place;
+    private final String name;
+
+    public Place(int initialManyTokens, String name){
+        this.place = new Semaphore(initialManyTokens);
         this.name = name;
     }
 
-    public void addTokens(int tokens){
-        this.tokens += tokens;
+    public void subTokens(int manyTokens) throws InterruptedException {
+        place.acquire(manyTokens);
     }
 
-    public void subTokens(int tokens){
-        this.tokens -= tokens;
+    public void addTokens(int manyTokens) {
+        place.release(manyTokens);
     }
 
-    public int getTokens() {
-        return tokens;
+    public int getManyTokens() {
+        return place.availablePermits();
     }
 
     public String getName() {

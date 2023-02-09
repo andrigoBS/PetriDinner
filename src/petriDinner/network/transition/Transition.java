@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Transition {
-    private List<Bow> bowsIn;
-    private List<Bow> bowsOut;
-    private String name;
+    private final List<Bow> bowsIn;
+    private final List<Bow> bowsOut;
+    private final String name;
 
     public Transition(Bow bowIn, Bow bowOut, String name){
         this.bowsIn = new ArrayList<>();
@@ -20,11 +20,18 @@ public class Transition {
     }
 
     public void execute() {
-
+        bowsIn.forEach(bow -> {
+            try {
+                bow.subTokens();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        bowsOut.forEach(Bow::addTokens);
     }
 
     public boolean isActive(){
-        return false;
+        return bowsIn.stream().allMatch(Bow::canSubTokens);
     }
 
     public void addBowIn(Bow bowIn){

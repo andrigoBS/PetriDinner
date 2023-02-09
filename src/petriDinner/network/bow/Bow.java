@@ -3,12 +3,24 @@ package petriDinner.network.bow;
 import petriDinner.network.place.Place;
 
 public class Bow {
-    private int weight;
-    private Place place;
+    private final int weight;
+    private final Place place;
 
     public Bow(int weight, Place place){
         this.weight = weight;
         this.place = place;
+    }
+
+    public void subTokens() throws InterruptedException {
+        place.subTokens(weight);
+    }
+
+    public void addTokens() {
+        place.addTokens(weight);
+    }
+
+    public boolean canSubTokens() {
+        return place.getManyTokens() > weight;
     }
 
     public Place getPlace() {
@@ -24,7 +36,7 @@ public class Bow {
     }
 
     public int getPlaceTokens(){
-        return this.getPlace().getTokens();
+        return this.getPlace().getManyTokens();
     }
 
 }
