@@ -1,39 +1,39 @@
 package petriDinner.network.transition;
 
-import petriDinner.network.place.Place;
+import petriDinner.network.bow.Bow;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Transition {
-    private List<Place> placesIn;
-    private List<Place> placesOut;
+    private List<Bow> bowsIn;
+    private List<Bow> bowsOut;
 
-    public Transition(Place placeIn, Place placeOut){
-        this.placesIn = new ArrayList<>();
-        this.placesOut = new ArrayList<>();
+    public Transition(Bow bowIn, Bow bowOut){
+        this.bowsIn = new ArrayList<>();
+        this.bowsOut = new ArrayList<>();
 
-        this.placesIn.add(placeIn);
-        this.placesOut.add(placeOut);
+        this.bowsIn.add(bowIn);
+        this.bowsOut.add(bowOut);
     }
 
     public void execute() {
 
     }
 
-    public void addPlaceIn(Place placeIn){
-        this.placesIn.add(placeIn);
+    public void addBowIn(Bow bowIn){
+        this.bowsIn.add(bowIn);
     }
 
-    public void addPlaceOut(Place placeOut){
-        this.placesOut.add(placeOut);
+    public void addBowOut(Bow bowOut){
+        this.bowsOut.add(bowOut);
     }
 
-    public List<Place> getPlacesIn() {
-        return placesIn;
+    public List<Bow> getBowsIn() {
+        return bowsIn;
     }
 
-    public List<Place> getPlacesOut() {
-        return placesOut;
+    public List<Bow> getBowsOut() {
+        return bowsOut;
     }
 }

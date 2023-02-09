@@ -1,12 +1,10 @@
 package petriDinner.network.place;
 
+
 public class Place {
-//    private int weight;
     private int tokens;
 
-
-    public Place(int weight, int tokens){
-//        this.weight = weight;
+    public Place(int tokens){
         this.tokens = tokens;
     }
 
@@ -21,8 +19,5 @@ public class Place {
     public int getTokens() {
         return tokens;
     }
-//
-//    public int getWeight() {
-//        return weight;
-//    }
+
 }
