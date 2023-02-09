@@ -18,4 +18,13 @@ public class Bow {
     public int getWeight() {
         return weight;
     }
+
+    public String getPlaceName(){
+        return this.getPlace().getName();
+    }
+
+    public int getPlaceTokens(){
+        return this.getPlace().getTokens();
+    }
+
 }

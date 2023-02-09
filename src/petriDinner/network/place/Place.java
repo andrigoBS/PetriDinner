@@ -3,9 +3,11 @@ package petriDinner.network.place;
 
 public class Place {
     private int tokens;
+    private String name;
 
-    public Place(int tokens){
+    public Place(int tokens, String name){
         this.tokens = tokens;
+        this.name = name;
     }
 
     public void addTokens(int tokens){
@@ -20,4 +22,7 @@ public class Place {
         return tokens;
     }
 
+    public String getName() {
+        return name;
+    }
 }
