@@ -1,3 +1,4 @@
+import org.xml.sax.SAXException;
 import petriDinner.PetriDinner;
 import petriDinner.examples.Examples;
 import petriDinner.network.LogNetwork;
@@ -5,12 +6,15 @@ import petriDinner.network.Network;
 import petriDinner.network.bow.Bow;
 import petriDinner.network.place.Place;
 import petriDinner.network.transition.Transition;
+import petriDinner.parserPNML.ParserPNML;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException, IOException, ParserConfigurationException,SAXException {
 
         Examples examples = new Examples();
         Network networkCandyMachine = examples.candyMachine();
@@ -20,6 +24,9 @@ public class Main {
 
 //        Network networkExample1 = examples.example1();
 //        networkExample1.simulate(10);
+
+//        ParserPNML parserPNML = new ParserPNML();
+//        parserPNML.toNetwork("./assets/dinner.pnml");
 
     }
 
