@@ -21,6 +21,10 @@ public class Transition {
 
     }
 
+    public boolean isActive(){
+        return false;
+    }
+
     public void addBowIn(Bow bowIn){
         this.bowsIn.add(bowIn);
     }
