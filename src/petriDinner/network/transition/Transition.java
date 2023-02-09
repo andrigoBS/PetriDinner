@@ -17,6 +17,10 @@ public class Transition {
         this.placesOut.add(placeOut);
     }
 
+    public void execute() {
+
+    }
+
     public void addPlaceIn(Place placeIn){
         this.placesIn.add(placeIn);
     }
