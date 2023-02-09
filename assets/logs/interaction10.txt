@@ -24,7 +24,7 @@ bow in: (a -> t7)
 
 ======== Transition out: t7 ==========
 place: e
-tokens: 0
+tokens: 1
 weight: 1
 bow out: (t7 -> e) 
 
@@ -40,7 +40,7 @@ bow in: (b -> t2)
 
 ======== Transition out: t2 ==========
 place: c
-tokens: 1
+tokens: 0
 weight: 1
 bow out: (t2 -> c) 
 
@@ -56,7 +56,7 @@ bow in: (b -> t6)
 
 ======== Transition out: t6 ==========
 place: e
-tokens: 0
+tokens: 1
 weight: 1
 bow out: (t6 -> e) 
 
@@ -66,13 +66,13 @@ bow out: (t6 -> e)
 
 ======== Transition in: t5 ==========
 place: e
-tokens: 0
+tokens: 1
 weight: 1
 bow in: (e -> t5) 
 
 ======== Transition out: t5 ==========
 place: c
-tokens: 1
+tokens: 0
 weight: 1
 bow out: (t5 -> c) 
 
@@ -82,7 +82,7 @@ bow out: (t5 -> c)
 
 ======== Transition in: t4 ==========
 place: e
-tokens: 0
+tokens: 1
 weight: 1
 bow in: (e -> t4) 
 
@@ -98,7 +98,7 @@ bow out: (t4 -> d)
 
 ======== Transition in: t3 ==========
 place: c
-tokens: 1
+tokens: 0
 weight: 1
 bow in: (c -> t3) 
 
@@ -114,7 +114,7 @@ bow out: (t3 -> d)
 
 ======== Transition in: t9 ==========
 place: c
-tokens: 1
+tokens: 0
 weight: 1
 bow in: (c -> t9) 
 

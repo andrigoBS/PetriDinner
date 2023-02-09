@@ -1,16 +1,10 @@
 import org.xml.sax.SAXException;
-import petriDinner.PetriDinner;
 import petriDinner.examples.Examples;
 import petriDinner.network.LogNetwork;
 import petriDinner.network.Network;
-import petriDinner.network.bow.Bow;
-import petriDinner.network.place.Place;
-import petriDinner.network.transition.Transition;
-import petriDinner.parserPNML.ParserPNML;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
