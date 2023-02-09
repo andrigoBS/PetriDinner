@@ -6,7 +6,7 @@ public class Bow {
     private final int weight;
     private final Place place;
 
-    public Bow(int weight, Place place){
+    public Bow(int weight, Place place) {
         this.weight = weight;
         this.place = place;
     }
@@ -31,11 +31,11 @@ public class Bow {
         return weight;
     }
 
-    public String getPlaceName(){
+    public String getPlaceName() {
         return this.getPlace().getName();
     }
 
-    public int getPlaceTokens(){
+    public int getPlaceTokens() {
         return this.getPlace().getManyTokens();
     }
 

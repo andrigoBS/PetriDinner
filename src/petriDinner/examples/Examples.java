@@ -7,7 +7,7 @@ import petriDinner.network.transition.Transition;
 
 public class Examples {
 
-    public Network candyMachine(){
+    public Network candyMachine() {
         Place place1 = new Place(1, "a");
         Place place2 = new Place(0, "b");
         Place place3 = new Place(0, "c");
@@ -65,7 +65,7 @@ public class Examples {
         return network;
     }
 
-    public Network example1(){
+    public Network example1() {
         Place place1 = new Place(1, "a");
         Place place2 = new Place(0, "b");
         Place place3 = new Place(0, "c");

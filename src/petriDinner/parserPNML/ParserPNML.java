@@ -47,7 +47,7 @@ public class ParserPNML {
     }
 
 
-    private Map<String, Place> createPlaces(Element element){
+    private Map<String, Place> createPlaces(Element element) {
         NodeList listPlaces = element.getElementsByTagName("place");
         Map<String, Place> places = new HashMap<>();
 
@@ -65,8 +65,8 @@ public class ParserPNML {
                 Element initialMarkingElement = (Element) placeElement.getElementsByTagName("initialMarking").item(0);
                 int initialMarking = 0;
 
-                if(initialMarkingElement != null){
-                   initialMarking = Integer.parseInt(initialMarkingElement.getElementsByTagName("text").item(0).getTextContent());
+                if (initialMarkingElement != null) {
+                    initialMarking = Integer.parseInt(initialMarkingElement.getElementsByTagName("text").item(0).getTextContent());
                 }
 
                 Place place = new Place(initialMarking, text);
@@ -77,7 +77,7 @@ public class ParserPNML {
     }
 
 
-    private Map<String, Transition> createTransitions(Element element){
+    private Map<String, Transition> createTransitions(Element element) {
         NodeList listTransitions = element.getElementsByTagName("transition");
         Map<String, Transition> transitions = new HashMap<>();
 
@@ -99,7 +99,7 @@ public class ParserPNML {
         return transitions;
     }
 
-    private Map<String, Transition> createBows(Element element, Map<String, Transition> transitions, Map<String, Place> places){
+    private Map<String, Transition> createBows(Element element, Map<String, Transition> transitions, Map<String, Place> places) {
         NodeList listBows = element.getElementsByTagName("arc");
 
         for (int i = 0; i < listBows.getLength(); i++) {
@@ -114,10 +114,10 @@ public class ParserPNML {
                 Element weightElement = (Element) bowElement.getElementsByTagName("inscription").item(0);
                 int weight = Integer.parseInt(weightElement.getElementsByTagName("text").item(0).getTextContent());
 
-                if(transitions.containsKey(source)){
+                if (transitions.containsKey(source)) {
                     Bow bow = new Bow(weight, places.get(target));
                     transitions.get(source).addBowOut(bow);
-                }else{
+                } else {
                     Bow bow = new Bow(weight, places.get(source));
                     transitions.get(target).addBowIn(bow);
                 }
@@ -126,7 +126,7 @@ public class ParserPNML {
         return transitions;
     }
 
-    private Network createNetwork(Map<String, Transition> transitionsWithArcs){
+    private Network createNetwork(Map<String, Transition> transitionsWithArcs) {
         Network network = new Network();
         transitionsWithArcs.values().forEach(network::addTransition);
         return network;
