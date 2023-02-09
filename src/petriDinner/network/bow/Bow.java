@@ -11,8 +11,8 @@ public class Bow {
         this.place = place;
     }
 
-    public void subTokens() throws InterruptedException {
-        place.subTokens(weight);
+    public boolean subTokens() {
+        return place.subTokens(weight);
     }
 
     public void addTokens() {

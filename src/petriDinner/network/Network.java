@@ -26,7 +26,6 @@ public class Network {
         while (interactions < maxInteractions) {
             List<Transition> activeTransitions = transitions.stream().filter(Transition::isActive).toList();
 
-
             if(activeTransitions.size() == 0) break;
 
             synchronization = new Semaphore(0);
@@ -36,26 +35,7 @@ public class Network {
             });
 
             synchronization.acquire(activeTransitions.size());
-
-            logState();
         }
-    }
-
-    private void logState() {
-
-        String text = "";
-
-
-
-        for (Transition transition : transitions) {
-            text += "======= INTERATIONS = " + interactions + " ======\n\n";
-            text += transition.toString();
-            text += "==============================================\n\n";
-
-        }
-
-        System.out.println(text);
-
     }
 
     private class TransactionThread extends Thread{
@@ -67,16 +47,18 @@ public class Network {
 
         @Override
         public void run() {
-            transition.execute();
-            try {
-                semaphoreInteractions.acquire();
-                interactions++;
-                semaphoreInteractions.release();
-
-                synchronization.release();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            boolean isDo = transition.execute();
+            if(isDo) {
+                try {
+                    semaphoreInteractions.acquire();
+                    interactions++;
+                    LogNetwork.put(transitions, interactions);
+                    semaphoreInteractions.release();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
+            synchronization.release();
         }
     }
 }

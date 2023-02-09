@@ -1,19 +1,22 @@
 import petriDinner.PetriDinner;
 import petriDinner.examples.Examples;
+import petriDinner.network.LogNetwork;
 import petriDinner.network.Network;
 import petriDinner.network.bow.Bow;
 import petriDinner.network.place.Place;
 import petriDinner.network.transition.Transition;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         Examples examples = new Examples();
         Network networkCandyMachine = examples.candyMachine();
         networkCandyMachine.simulate(10);
+
+        LogNetwork.getInstance().toFiles("./assets/logs/");
 
 //        Network networkExample1 = examples.example1();
 //        networkExample1.simulate(10);

@@ -20,15 +20,20 @@ public class Transition {
         this.bowsOut.add(bowOut);
     }
 
-    public void execute() {
-        bowsIn.forEach(bow -> {
-            try {
-                bow.subTokens();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+    public boolean execute() {
+        if(!isActive()) return false;
+        for (int i = 0; i < bowsIn.size(); i++) {
+            boolean isDo = bowsIn.get(i).subTokens();
+            System.out.println(isDo);
+            if(!isDo) {
+                for (int j = 0; j < i; j++) {
+                    bowsIn.get(j).addTokens();
+                }
+                return false;
             }
-        });
+        }
         bowsOut.forEach(Bow::addTokens);
+        return true;
     }
 
     public boolean isActive(){

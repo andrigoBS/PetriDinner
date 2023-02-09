@@ -1,6 +1,5 @@
 package petriDinner.network.place;
 
-
 import java.util.concurrent.Semaphore;
 
 public class Place {
@@ -12,9 +11,8 @@ public class Place {
         this.name = name;
     }
 
-    public void subTokens(int manyTokens) throws InterruptedException {
-        if(manyTokens > getManyTokens()) return;
-        place.acquire(manyTokens);
+    public boolean subTokens(int manyTokens) {
+        return place.tryAcquire(manyTokens);
     }
 
     public void addTokens(int manyTokens) {
