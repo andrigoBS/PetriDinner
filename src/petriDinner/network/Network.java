@@ -23,6 +23,8 @@ public class Network {
     }
 
     public void simulate(int maxInteractions) throws InterruptedException {
+        LogNetwork.put(transitions, interactions);
+
         while (interactions < maxInteractions) {
             List<Transition> activeTransitions = transitions.stream().filter(Transition::isActive).toList();
 

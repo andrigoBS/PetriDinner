@@ -24,7 +24,6 @@ public class Transition {
         if(!isActive()) return false;
         for (int i = 0; i < bowsIn.size(); i++) {
             boolean isDo = bowsIn.get(i).subTokens();
-            System.out.println(isDo);
             if(!isDo) {
                 for (int j = 0; j < i; j++) {
                     bowsIn.get(j).addTokens();

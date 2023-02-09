@@ -1,0 +1,144 @@
+======= INTERATIONS = 6 ======
+
+======== Transition in: t1 ==========
+place: a
+tokens: 0
+weight: 1
+bow in: (a -> t1) 
+
+======== Transition out: t1 ==========
+place: b
+tokens: 0
+weight: 1
+bow out: (t1 -> b) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t7 ==========
+place: a
+tokens: 0
+weight: 1
+bow in: (a -> t7) 
+
+======== Transition out: t7 ==========
+place: e
+tokens: 0
+weight: 1
+bow out: (t7 -> e) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t2 ==========
+place: b
+tokens: 0
+weight: 1
+bow in: (b -> t2) 
+
+======== Transition out: t2 ==========
+place: c
+tokens: 1
+weight: 1
+bow out: (t2 -> c) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t6 ==========
+place: b
+tokens: 0
+weight: 1
+bow in: (b -> t6) 
+
+======== Transition out: t6 ==========
+place: e
+tokens: 0
+weight: 1
+bow out: (t6 -> e) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t5 ==========
+place: e
+tokens: 0
+weight: 1
+bow in: (e -> t5) 
+
+======== Transition out: t5 ==========
+place: c
+tokens: 1
+weight: 1
+bow out: (t5 -> c) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t4 ==========
+place: e
+tokens: 0
+weight: 1
+bow in: (e -> t4) 
+
+======== Transition out: t4 ==========
+place: d
+tokens: 0
+weight: 1
+bow out: (t4 -> d) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t3 ==========
+place: c
+tokens: 1
+weight: 1
+bow in: (c -> t3) 
+
+======== Transition out: t3 ==========
+place: d
+tokens: 0
+weight: 1
+bow out: (t3 -> d) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t9 ==========
+place: c
+tokens: 1
+weight: 1
+bow in: (c -> t9) 
+
+======== Transition out: t9 ==========
+place: a
+tokens: 0
+weight: 1
+bow out: (t9 -> a) 
+
+==============================================
+
+======= INTERATIONS = 6 ======
+
+======== Transition in: t8 ==========
+place: d
+tokens: 0
+weight: 1
+bow in: (d -> t8) 
+
+======== Transition out: t8 ==========
+place: a
+tokens: 0
+weight: 1
+bow out: (t8 -> a) 
+
+==============================================
+
