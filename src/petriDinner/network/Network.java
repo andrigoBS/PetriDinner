@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 
 public class Network {
-    private List<Transition> transitions;
+    private final List<Transition> transitions;
     private int interactions;
-    private Semaphore semaphoreInteractions;
+    private final Semaphore semaphoreInteractions;
+    private Semaphore synchronization;
 
     public Network(){
         this.transitions = new ArrayList<>();
@@ -21,8 +22,30 @@ public class Network {
         this.transitions.add(transition);
     }
 
+    public void simulate(int maxInteractions) throws InterruptedException {
+        while (maxInteractions < interactions) {
+            List<Transition> activeTransitions = transitions.stream().filter(Transition::isActive).toList();
+
+            if(activeTransitions.size() == 0) break;
+
+            synchronization = new Semaphore(0);
+
+            activeTransitions.forEach(transition -> {
+                new TransactionThread(transition).start();
+            });
+
+            synchronization.acquire(activeTransitions.size());
+
+            logState();
+        }
+    }
+
+    private void logState() {
+        System.out.println(transitions);
+    }
+
     private class TransactionThread extends Thread{
-        private Transition transition;
+        private final Transition transition;
 
         public TransactionThread(Transition transition) {
             this.transition = transition;
@@ -35,6 +58,8 @@ public class Network {
                 semaphoreInteractions.acquire();
                 interactions++;
                 semaphoreInteractions.release();
+
+                synchronization.release();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
